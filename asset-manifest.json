@@ -1,25 +1,31 @@
 {
   "files": {
     "main.css": "/suren-project/static/css/main.28e4956e.chunk.css",
-    "main.js": "/suren-project/static/js/main.dde19a81.chunk.js",
-    "main.js.map": "/suren-project/static/js/main.dde19a81.chunk.js.map",
-    "runtime-main.js": "/suren-project/static/js/runtime-main.f4c0a960.js",
-    "runtime-main.js.map": "/suren-project/static/js/runtime-main.f4c0a960.js.map",
-    "static/js/2.77b786cc.chunk.js": "/suren-project/static/js/2.77b786cc.chunk.js",
-    "static/js/2.77b786cc.chunk.js.map": "/suren-project/static/js/2.77b786cc.chunk.js.map",
-    "static/js/3.fee87f15.chunk.js": "/suren-project/static/js/3.fee87f15.chunk.js",
-    "static/js/3.fee87f15.chunk.js.map": "/suren-project/static/js/3.fee87f15.chunk.js.map",
-    "static/js/4.e1418428.chunk.js": "/suren-project/static/js/4.e1418428.chunk.js",
-    "static/js/4.e1418428.chunk.js.map": "/suren-project/static/js/4.e1418428.chunk.js.map",
+    "main.js": "/suren-project/static/js/main.565a4e2e.chunk.js",
+    "main.js.map": "/suren-project/static/js/main.565a4e2e.chunk.js.map",
+    "runtime-main.js": "/suren-project/static/js/runtime-main.c8199b58.js",
+    "runtime-main.js.map": "/suren-project/static/js/runtime-main.c8199b58.js.map",
+    "static/js/2.b9887215.chunk.js": "/suren-project/static/js/2.b9887215.chunk.js",
+    "static/js/2.b9887215.chunk.js.map": "/suren-project/static/js/2.b9887215.chunk.js.map",
+    "static/js/3.66241ce5.chunk.js": "/suren-project/static/js/3.66241ce5.chunk.js",
+    "static/js/3.66241ce5.chunk.js.map": "/suren-project/static/js/3.66241ce5.chunk.js.map",
+    "static/js/4.f9be8e0d.chunk.js": "/suren-project/static/js/4.f9be8e0d.chunk.js",
+    "static/js/4.f9be8e0d.chunk.js.map": "/suren-project/static/js/4.f9be8e0d.chunk.js.map",
     "index.html": "/suren-project/index.html",
-    "precache-manifest.4567782d4deef4608ae8fca52ccc2cea.js": "/suren-project/precache-manifest.4567782d4deef4608ae8fca52ccc2cea.js",
+    "precache-manifest.a126e1c65a549fee0439dce5171c4754.js": "/suren-project/precache-manifest.a126e1c65a549fee0439dce5171c4754.js",
     "service-worker.js": "/suren-project/service-worker.js",
-    "static/css/main.28e4956e.chunk.css.map": "/suren-project/static/css/main.28e4956e.chunk.css.map"
+    "static/css/main.28e4956e.chunk.css.map": "/suren-project/static/css/main.28e4956e.chunk.css.map",
+    "static/media/Ice.jpg": "/suren-project/static/media/Ice.fa1ec189.jpg",
+    "static/media/default.jpg": "/suren-project/static/media/default.1bf23cfc.jpg",
+    "static/media/mountain.jpg": "/suren-project/static/media/mountain.f3cd0f59.jpg",
+    "static/media/redSky.jpg": "/suren-project/static/media/redSky.eb25f039.jpg",
+    "static/media/sea.jpg": "/suren-project/static/media/sea.6bd0dd2f.jpg",
+    "static/media/ship.jpg": "/suren-project/static/media/ship.f1817f33.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f4c0a960.js",
-    "static/js/2.77b786cc.chunk.js",
+    "static/js/runtime-main.c8199b58.js",
+    "static/js/2.b9887215.chunk.js",
     "static/css/main.28e4956e.chunk.css",
-    "static/js/main.dde19a81.chunk.js"
+    "static/js/main.565a4e2e.chunk.js"
   ]
 }
