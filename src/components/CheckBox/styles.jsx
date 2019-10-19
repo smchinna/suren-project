@@ -5,7 +5,7 @@ export const CheckMark = styled.span`
   position: relative;
   height: 15px;
   width: 15px;
-  background-color: ${({ checked }) => checked? '#2196F3': ''};
+  background-color: ${({ checked }) => checked? '#2196F3': '#fff'};
   border: ${({ checked }) => checked? '1px solid #2196F3': '1px solid #e5e1e1'};
   border-radius: 3px;
   float: left;
@@ -37,6 +37,6 @@ export const CheckBoxDiv = styled.div`
 export const Text = styled.div`
   padding-left: ${({ showText }) => showText ? '10px' : '0'};
   font-size: 14px;
-  color: ${({ disabled }) => disabled ? '#afafaf' : '#000000'};
+  color: ${({ disabled }) => disabled ? '#afafaf' : '#fff'};
   cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
 `;

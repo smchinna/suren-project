@@ -2,6 +2,7 @@
   "name": "project_1",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://smchinna.github.io/suren-project",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
@@ -9,6 +10,7 @@
     "@material-ui/core": "^4.5.0",
     "@material-ui/icons": "^4.4.3",
     "connected-react-router": "^6.5.2",
+    "gh-pages": "^2.1.1",
     "history": "^4.10.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -18,13 +20,17 @@
     "react-speech-recognition": "^2.0.4",
     "redux": "^4.0.4",
     "redux-saga": "^1.1.1",
+    "serve": "^11.2.0",
     "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
+    "serve": "serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"

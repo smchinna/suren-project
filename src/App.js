@@ -17,16 +17,8 @@ class App extends React.Component {
         <Provider store={store}>
           <ConnectedRouter history={history}>
             <Switch>
-              {/* <Route
-                path="/login"
-                component={() => (
-                  <Suspense fallback={<div>...</div>}>
-                    <Login />
-                  </Suspense>
-                )}
-              /> */}
               <Route
-                path="/signin"
+                path="/"
                 component={() => (
                   <Suspense fallback={<div>...</div>}>
                     <SignIn />

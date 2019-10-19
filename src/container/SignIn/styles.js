@@ -1,77 +1,65 @@
 import styled from 'styled-components';
 
-export const Box = styled.div`
-  min-width: 500px;
-  padding: 20px 10px;
-  border: 1px solid #dadce0;
+export const BackGroundMaker = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: ${({ url }) => url && `url(${url})`};
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
 `;
 
-export const FullWidth = styled.div`
-  width: 100%;
-  height: 100vh;
+export const BackGroundGradient = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg,rgba(0,0,0,.45) 0,rgba(0,0,0,.9));
 `;
 
-export const FlexBox = styled.div`
+export const LoginBox = styled.div`
+  width: 400px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: 0 0 0 -200px;
+  left: 50%;
   display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: ${({ marginBottom }) => marginBottom && marginBottom };
+  border-radius: 4px;
 `;
 
-export const CustomInput = styled.input`
-  height: 40px;
-  width: ${({ width }) => width ? width : '250px'};
-  margin: 0px 15px;
-  padding: 0px 15px;
-  border: 1px solid #eaeaea;
-  outline: none;
-  font-size: 16px;
+export const LoginHeader = styled.div`
+  padding: 0 20px;
+  color: #fff;
+  position: relative;
+  .brand {
+    font-size: 28px;
+    color: #fff;
+  }
+`;
+
+export const BrandLogo = styled.span`
+  border-color: transparent rgba(0,0,0,.15) rgba(0,0,0,.3);
+  border-style: solid;
+  border-width: 14px;
+  background-color: #00acac;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  font-size: 0;
+  margin-right: 10px;
+  top: -11px;
   border-radius: 6px;
-  :hover {
-    outline: 1.2px solid #3e54ceba;
-  }
-  :focus {
-    outline: 1.2px solid #3e54ceba;
-  }
-`;
-
-export const CustomSelect = styled.select`
-  height: 40px;
-  width: ${({ width }) => width ? width : '250px'};
-  margin: 0px 15px;
-  padding: 0px 15px;
-  border: 1px solid #eaeaea;
-  outline: none;
-  font-size: 16px;
-  border-radius: 6px;
-  :hover {
-    outline: 1.2px solid #3e54ceba;
-  }
-  :focus {
-    outline: 1.2px solid #3e54ceba;
-  }
-`;
-
-/**After */
-export const GridWidth = styled.div`
-  width: ${({ largeWidth }) => largeWidth ? largeWidth : '100%' };
-  display: inline-block;
-  vertical-align: top;
-  height: 100%;
-  background-color ${({ bgColor }) => bgColor ? bgColor : 'white'};
-  @media(max-width: 1200px) {
-    width: ${({ mediumWidth }) => mediumWidth ? mediumWidth : '100%' };
-  }
-  @media(max-width: 600px) {
-    width: ${({ smallWidth }) => smallWidth ? smallWidth : '100%' };
-  }
 `;
 
 export const SignInBox = styled.div`
-  width: 70%;
-  margin: 0px 15%;
+  padding: 20px;
   .marginBetGrid {
     margin: 15px 0px;
     width: 100%;
@@ -89,4 +77,38 @@ export const SignInBox = styled.div`
 export const RememberBox = styled.div`
   display: flex;
   width: 100%;
+  color: #fff;
+`;
+
+export const ThemeChanger = styled.div`
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  margin: 0;
+  padding: 0 0 0 20px;
+  z-index: 1020;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const Theme = styled.div`
+  width: 66px;
+  height: 66px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  border-radius: 66px;
+  border-color: ${({ active }) => active && '#fff'};
+  : hover {
+    border-color: hsla(0,0%,100%,.5)
+  }
+  >span {
+    cursor: pointer;
+    display: block;
+    height: 66px;
+    overflow: hidden;
+    background-image: ${({ url }) => url && `url(${url})`};
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
 `;
