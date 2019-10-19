@@ -8,7 +8,6 @@ import configureStore from './redux/store';
 
 const store = configureStore();
 const history = createBrowserHistory();
-const HomePage = lazy(() => import('./container/HomePage'));
 const SignIn = lazy(() => import('./container/SignIn'));
 
 class App extends React.Component {
@@ -19,10 +18,10 @@ class App extends React.Component {
           <ConnectedRouter history={history}>
             <Switch>
               {/* <Route
-                exact path="/"
+                path="/login"
                 component={() => (
                   <Suspense fallback={<div>...</div>}>
-                    <HomePage />
+                    <Login />
                   </Suspense>
                 )}
               /> */}

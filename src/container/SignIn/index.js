@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faLock, faBuilding } from '@fortawesome/free-solid-svg-icons'
 
 import InputCom from '../../components/InputCom';
 import CheckBox from '../../components/CheckBox';
@@ -70,19 +72,22 @@ class SignIn extends React.Component {
         type: 'text',
         placeHolder: 'Company Name',
         key: 'companyName',
-        value: companyName
+        value: companyName,
+        icon: faBuilding
       },
       {
         type: 'text',
         placeHolder: 'User Name',
         key: 'userName',
-        value: userName
+        value: userName,
+        icon: faUser
       },
       {
         type: 'password',
         placeHolder: 'Password',
         key: 'password',
-        value: password
+        value: password,
+        icon: faLock
       }
     ]
     return (
@@ -93,12 +98,12 @@ class SignIn extends React.Component {
         <GridWidth largeWidth="35%" mediumWidth="50%">
           <FlexBox>
             <SignInBox>
-              <div className="marginBetGrid">
-
-              </div>
               {inputData.map((obj, index) => (
                 <div className="marginBetGrid" key={index}>
                   {this.getInput(obj)}
+                  <span className="icon">
+                    <FontAwesomeIcon icon={obj.icon} />
+                  </span>
                 </div>
               ))}
               {this.getRememberMeUI()}

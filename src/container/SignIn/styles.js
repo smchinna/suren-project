@@ -75,6 +75,14 @@ export const SignInBox = styled.div`
   .marginBetGrid {
     margin: 15px 0px;
     width: 100%;
+    position: relative;
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 15px;
+      line-height: 47px;
+      color: rgb(153, 153, 153);
+    }
   }
 `;
 
