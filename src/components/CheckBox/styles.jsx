@@ -29,7 +29,6 @@ export const CheckMark = styled.span`
 `;
 
 export const CheckBoxDiv = styled.div`
-  height: 20px;
   display: flex;
   align-items: center;
 `;

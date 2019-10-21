@@ -3,10 +3,12 @@ import { CheckMark, CheckBoxDiv, Text } from './styles';
 
 class CheckBox extends React.Component{
   render(){
-    const { disabled, checked, onChange } = this.props;
+    const { disabled, checked, changeFunc } = this.props;
     return(
-      <CheckBoxDiv onClick={() => onChange && onChange()}>
-        <CheckMark checked={checked} disabled={disabled}/>
+      <CheckBoxDiv onClick={() => changeFunc && changeFunc()}>
+        <div>
+          <CheckMark checked={checked} disabled={disabled}/>
+        </div>
         <Text disabled={disabled} showText={!!this.props.children}>{this.props.children}</Text>
       </CheckBoxDiv>
     );

@@ -9,6 +9,8 @@ import configureStore from './redux/store';
 const store = configureStore();
 const history = createBrowserHistory();
 const SignIn = lazy(() => import('./container/SignIn'));
+const Charts = lazy(() => import('./container/Charts'));
+const Signup = lazy(() => import('./container/SignUp'));
 
 class App extends React.Component {
   render() {
@@ -18,10 +20,26 @@ class App extends React.Component {
           <ConnectedRouter history={history}>
             <Switch>
               <Route
-                path="/"
+                exact path="/"
                 component={() => (
                   <Suspense fallback={<div>...</div>}>
                     <SignIn />
+                  </Suspense>
+                )}
+              />
+              <Route
+                path="/signup"
+                component={() => (
+                  <Suspense fallback={<div>...</div>}>
+                    <Signup />
+                  </Suspense>
+                )}
+              />
+               <Route
+                path="/charts"
+                component={() => (
+                  <Suspense fallback={<div>...</div>}>
+                    <Charts />
                   </Suspense>
                 )}
               />

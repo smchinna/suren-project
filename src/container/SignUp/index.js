@@ -10,19 +10,20 @@ import Button from '../../components/Button';
 
 /**Styles */
 import {
-   LoginBox, LoginHeader, BrandLogo, SignInBox, RememberBox
+  LoginBox, LoginHeader, BrandLogo, SignInBox, RememberBox
 } from './styles';
 
 import ThemeHoc from '../../Hoc/BackgroundThemeHoc';
 
-class SignIn extends React.Component {
+class SignUp extends React.Component {
 
   constructor() {
     super();
     this.state = {
       companyName: '',
-      userName: '',
+      email: '',
       password: '',
+      confirmPassword: '',
       rememberMe: false
     }
   }
@@ -34,7 +35,6 @@ class SignIn extends React.Component {
   }
 
   changeCheckBox = () => {
-    console.log('assssssss')
     this.setState({
       rememberMe: !this.state.rememberMe
     })
@@ -53,7 +53,7 @@ class SignIn extends React.Component {
   }
 
   getLoginUI = () => {
-    const { userName, companyName, password } = this.state;
+    const { userName, companyName, password, confirmPassword } = this.state;
     let inputData = [
       {
         type: 'text',
@@ -64,8 +64,8 @@ class SignIn extends React.Component {
       },
       {
         type: 'text',
-        placeHolder: 'User Name',
-        key: 'userName',
+        placeHolder: 'Email',
+        key: 'email',
         value: userName,
         icon: faUser
       },
@@ -75,6 +75,13 @@ class SignIn extends React.Component {
         key: 'password',
         value: password,
         icon: faLock
+      },
+      {
+        type: 'Re-enter password',
+        placeHolder: 'Confirm Password',
+        key: 'confirmPassword',
+        value: confirmPassword,
+        icon: faLock
       }
     ]
     return (
@@ -82,9 +89,11 @@ class SignIn extends React.Component {
         {inputData.map((obj, index) => (
           <div className="marginBetGrid" key={index}>
             {this.getInput(obj)}
-            <span className="icon">
-              <FontAwesomeIcon icon={obj.icon} />
-            </span>
+            {obj.icon &&
+              <span className="icon">
+                <FontAwesomeIcon icon={obj.icon} />
+              </span>
+            }
           </div>
         ))}
         {this.getRememberMeUI()}
@@ -97,7 +106,7 @@ class SignIn extends React.Component {
     return (
       <div className="marginBetGrid">
         <Button>
-          Sign me in
+          Sign Up
       </Button>
       </div>
     )
@@ -109,7 +118,7 @@ class SignIn extends React.Component {
       <div className="marginBetGrid">
         <RememberBox>
           <CheckBox checked={rememberMe} disabled={false} changeFunc={this.changeCheckBox} params="rememberMe">
-            Remember Me
+            Sign Up, you agree to our <span>Terms</span> and that you have read our <span>Data Policy</span>, including our <span>Cookie Use</span>.
           </CheckBox>
         </RememberBox>
       </div>
@@ -123,7 +132,7 @@ class SignIn extends React.Component {
           <LoginHeader>
             <div className="brand">
               <BrandLogo />
-              <b>ADC Marvel</b> admin
+              Create your <b>ADC Account</b>
             </div>
           </LoginHeader>
           {this.getLoginUI()}
@@ -133,4 +142,4 @@ class SignIn extends React.Component {
   }
 }
 
-export default ThemeHoc(SignIn);
+export default ThemeHoc(SignUp);
