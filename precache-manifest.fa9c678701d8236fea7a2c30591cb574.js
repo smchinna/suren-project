@@ -1,31 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1a1d97cdd3aa01f454c081770829551c",
+    "revision": "b31c0dc927f4310c7687ba8bbe723f99",
     "url": "/suren-project/index.html"
   },
   {
-    "revision": "2d6c0de5e1b91c38ec60",
+    "revision": "5cc7ab732832f7092b2c",
     "url": "/suren-project/static/css/main.28e4956e.chunk.css"
   },
   {
-    "revision": "652be7633e12e3a45bae",
-    "url": "/suren-project/static/js/2.b9887215.chunk.js"
+    "revision": "3fd984c395663ecf3684",
+    "url": "/suren-project/static/js/0.9e3a2026.chunk.js"
   },
   {
-    "revision": "c8cbb4bb1f2e70c82803",
-    "url": "/suren-project/static/js/3.66241ce5.chunk.js"
+    "revision": "982d552043b0349f11a7",
+    "url": "/suren-project/static/js/3.9880a296.chunk.js"
   },
   {
-    "revision": "b8fcc5f1d20fcf9c1924",
-    "url": "/suren-project/static/js/4.f9be8e0d.chunk.js"
+    "revision": "aa10ca319acd1b28582b",
+    "url": "/suren-project/static/js/4.b5e0bc6b.chunk.js"
   },
   {
-    "revision": "2d6c0de5e1b91c38ec60",
-    "url": "/suren-project/static/js/main.565a4e2e.chunk.js"
+    "revision": "e8255ca80a708f828642",
+    "url": "/suren-project/static/js/5.cda9a144.chunk.js"
   },
   {
-    "revision": "5d9fe4ce990164e2f783",
-    "url": "/suren-project/static/js/runtime-main.c8199b58.js"
+    "revision": "317b6e0106311f91eb36",
+    "url": "/suren-project/static/js/6.f0dafbac.chunk.js"
+  },
+  {
+    "revision": "5cc7ab732832f7092b2c",
+    "url": "/suren-project/static/js/main.a0ddafda.chunk.js"
+  },
+  {
+    "revision": "e45f487115a6b96ef713",
+    "url": "/suren-project/static/js/runtime-main.c9be621e.js"
   },
   {
     "revision": "fa1ec1895e364a7c2dd9c85007d088b9",
