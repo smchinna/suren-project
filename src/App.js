@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <div className="mainApp">
         <Provider store={store}>
-          <ConnectedRouter history={history}>
+          <ConnectedRouter history={history} >
             <Switch>
               <Route
                 exact path="/"
