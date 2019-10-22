@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "568c4aedb6d05630f4bd6da3fe9c84eb",
+    "revision": "64dff788a0643c1a46bd0ede1eedd664",
     "url": "/suren-project/index.html"
   },
   {
-    "revision": "43e0bee6b5a6d3117e10",
+    "revision": "27ceb2e288e0816c026f",
     "url": "/suren-project/static/css/main.28e4956e.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/suren-project/static/js/6.76eb73b7.chunk.js"
   },
   {
-    "revision": "43e0bee6b5a6d3117e10",
-    "url": "/suren-project/static/js/main.212ca6c6.chunk.js"
+    "revision": "27ceb2e288e0816c026f",
+    "url": "/suren-project/static/js/main.e25bd8ae.chunk.js"
   },
   {
     "revision": "51e10dfb95d1a0277d06",
