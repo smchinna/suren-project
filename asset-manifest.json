@@ -1,22 +1,22 @@
 {
   "files": {
-    "static/js/0.9e3a2026.chunk.js": "/suren-project/static/js/0.9e3a2026.chunk.js",
-    "static/js/0.9e3a2026.chunk.js.map": "/suren-project/static/js/0.9e3a2026.chunk.js.map",
+    "static/js/0.0d9911ab.chunk.js": "/suren-project/static/js/0.0d9911ab.chunk.js",
+    "static/js/0.0d9911ab.chunk.js.map": "/suren-project/static/js/0.0d9911ab.chunk.js.map",
     "main.css": "/suren-project/static/css/main.28e4956e.chunk.css",
-    "main.js": "/suren-project/static/js/main.a0ddafda.chunk.js",
-    "main.js.map": "/suren-project/static/js/main.a0ddafda.chunk.js.map",
-    "runtime-main.js": "/suren-project/static/js/runtime-main.c9be621e.js",
-    "runtime-main.js.map": "/suren-project/static/js/runtime-main.c9be621e.js.map",
-    "static/js/3.9880a296.chunk.js": "/suren-project/static/js/3.9880a296.chunk.js",
-    "static/js/3.9880a296.chunk.js.map": "/suren-project/static/js/3.9880a296.chunk.js.map",
-    "static/js/4.b5e0bc6b.chunk.js": "/suren-project/static/js/4.b5e0bc6b.chunk.js",
-    "static/js/4.b5e0bc6b.chunk.js.map": "/suren-project/static/js/4.b5e0bc6b.chunk.js.map",
-    "static/js/5.cda9a144.chunk.js": "/suren-project/static/js/5.cda9a144.chunk.js",
-    "static/js/5.cda9a144.chunk.js.map": "/suren-project/static/js/5.cda9a144.chunk.js.map",
-    "static/js/6.f0dafbac.chunk.js": "/suren-project/static/js/6.f0dafbac.chunk.js",
-    "static/js/6.f0dafbac.chunk.js.map": "/suren-project/static/js/6.f0dafbac.chunk.js.map",
+    "main.js": "/suren-project/static/js/main.81c63fea.chunk.js",
+    "main.js.map": "/suren-project/static/js/main.81c63fea.chunk.js.map",
+    "runtime-main.js": "/suren-project/static/js/runtime-main.2bd76b9f.js",
+    "runtime-main.js.map": "/suren-project/static/js/runtime-main.2bd76b9f.js.map",
+    "static/js/3.43668233.chunk.js": "/suren-project/static/js/3.43668233.chunk.js",
+    "static/js/3.43668233.chunk.js.map": "/suren-project/static/js/3.43668233.chunk.js.map",
+    "static/js/4.8a253a4a.chunk.js": "/suren-project/static/js/4.8a253a4a.chunk.js",
+    "static/js/4.8a253a4a.chunk.js.map": "/suren-project/static/js/4.8a253a4a.chunk.js.map",
+    "static/js/5.9953dc95.chunk.js": "/suren-project/static/js/5.9953dc95.chunk.js",
+    "static/js/5.9953dc95.chunk.js.map": "/suren-project/static/js/5.9953dc95.chunk.js.map",
+    "static/js/6.76eb73b7.chunk.js": "/suren-project/static/js/6.76eb73b7.chunk.js",
+    "static/js/6.76eb73b7.chunk.js.map": "/suren-project/static/js/6.76eb73b7.chunk.js.map",
     "index.html": "/suren-project/index.html",
-    "precache-manifest.fa9c678701d8236fea7a2c30591cb574.js": "/suren-project/precache-manifest.fa9c678701d8236fea7a2c30591cb574.js",
+    "precache-manifest.95afeb5a12577c852ac614d60918b1ec.js": "/suren-project/precache-manifest.95afeb5a12577c852ac614d60918b1ec.js",
     "service-worker.js": "/suren-project/service-worker.js",
     "static/css/main.28e4956e.chunk.css.map": "/suren-project/static/css/main.28e4956e.chunk.css.map",
     "static/media/Ice.jpg": "/suren-project/static/media/Ice.fa1ec189.jpg",
@@ -24,12 +24,13 @@
     "static/media/mountain.jpg": "/suren-project/static/media/mountain.f3cd0f59.jpg",
     "static/media/redSky.jpg": "/suren-project/static/media/redSky.eb25f039.jpg",
     "static/media/sea.jpg": "/suren-project/static/media/sea.6bd0dd2f.jpg",
-    "static/media/ship.jpg": "/suren-project/static/media/ship.f1817f33.jpg"
+    "static/media/ship.jpg": "/suren-project/static/media/ship.f1817f33.jpg",
+    "static/media/user.jpg": "/suren-project/static/media/user.154f15e0.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c9be621e.js",
-    "static/js/3.9880a296.chunk.js",
+    "static/js/runtime-main.2bd76b9f.js",
+    "static/js/3.43668233.chunk.js",
     "static/css/main.28e4956e.chunk.css",
-    "static/js/main.a0ddafda.chunk.js"
+    "static/js/main.81c63fea.chunk.js"
   ]
 }
