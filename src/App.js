@@ -6,11 +6,23 @@ import { Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import configureStore from './redux/store';
 
+
+import HeaderHoc from './Hoc/HeaderHoc';
+
 const store = configureStore();
 const history = createBrowserHistory();
+
 const SignIn = lazy(() => import('./container/SignIn'));
 const Charts = lazy(() => import('./container/Charts'));
 const Signup = lazy(() => import('./container/SignUp'));
+
+const ChartsSuspense = () => {
+  return (
+    <Suspense fallback={<div>loading</div>}>
+      <Charts />
+    </Suspense>
+  )
+}
 
 class App extends React.Component {
   render() {
@@ -35,13 +47,9 @@ class App extends React.Component {
                   </Suspense>
                 )}
               />
-               <Route
+              <Route
                 path="/charts"
-                component={() => (
-                  <Suspense fallback={<div>...</div>}>
-                    <Charts />
-                  </Suspense>
-                )}
+                component={HeaderHoc(ChartsSuspense)}
               />
             </Switch>
           </ConnectedRouter>
