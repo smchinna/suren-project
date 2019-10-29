@@ -9,6 +9,7 @@ export const HeadWrapper = styled.div`
   z-index: 1020;
   margin-bottom: 0;
   padding: 0;
+  background: #fff;
   -webkit-transition: box-shadow .2s linear;
   -moz-transition: box-shadow .2s linear;
   -ms-transition: box-shadow .2s linear;

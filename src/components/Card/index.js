@@ -1,6 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Width = styled.div`
+  width: 25%;
+  display: inline-block;
+  .flexDiv {
+    margin-left: 20px;
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+  }
+  @media(max-width: 1150px) {
+    width: 50%; 
+  }
+  @media(max-width: 700px) {
+    width: 100%;
+  }
+`;
+
 const Wrapper = styled.div`
   width: calc(100% - 30px);
   position: relative;
@@ -25,7 +41,8 @@ const IconWidget = styled.div`
 `;
 
 const Title = styled.h4`
-  font-size: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
   margin: 5px 0;
   color: rgba(255,255,255,.7);
 `;
@@ -48,25 +65,29 @@ const WidgetClicker = styled.div`
 class Card extends React.Component {
   render() {
     const { getIcon, title, value, bgColor } = this.props;
-    return(
-      <Wrapper bgColor={bgColor}>
-        <IconWidget>
-          {getIcon && getIcon()}
-        </IconWidget>
-        <div>
-          <Title>
-            {title}
-          </Title>
-          <Value>
-            {value}
-          </Value>
+    return (
+      <Width>
+        <div className="flexDiv">
+          <Wrapper bgColor={bgColor}>
+            <IconWidget>
+              {getIcon && getIcon()}
+            </IconWidget>
+            <div>
+              <Title>
+                {title}
+              </Title>
+              <Value>
+                {value}
+              </Value>
+            </div>
+            <div>
+              <WidgetClicker>
+                View Detail
+            </WidgetClicker>
+            </div>
+          </Wrapper>
         </div>
-        <div>
-          <WidgetClicker>
-            View Detail
-          </WidgetClicker>
-        </div>
-      </Wrapper>
+      </Width>
     )
   }
 }

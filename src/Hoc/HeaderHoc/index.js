@@ -37,7 +37,7 @@ const HeaderHoc = (WrapComponent) => {
       return(
         <>
           <HeadWrapper>
-          {this.getLeftUI()}
+           {this.getLeftUI()}
            {this.getRightUI()}
           </HeadWrapper>
           <PaddingTop>

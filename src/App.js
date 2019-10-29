@@ -15,13 +15,22 @@ const history = createBrowserHistory();
 const SignIn = lazy(() => import('./container/SignIn'));
 const Charts = lazy(() => import('./container/Charts'));
 const Signup = lazy(() => import('./container/SignUp'));
+const CurrentExecution = lazy(() => import('./container/CurrentExecution'));
 
-const ChartsSuspense = () => {
+const commonSuspenseFunc = (SuspenseCom) => {
   return (
     <Suspense fallback={<div>loading</div>}>
-      <Charts />
+      <SuspenseCom />
     </Suspense>
   )
+}
+
+const ChartsSuspense = () => {
+  return commonSuspenseFunc(Charts)
+}
+
+const CurrentExecutionSuspense = () => {
+  return commonSuspenseFunc(CurrentExecution)
 }
 
 class App extends React.Component {
@@ -32,7 +41,7 @@ class App extends React.Component {
           <ConnectedRouter history={history} >
             <Switch>
               <Route
-                exact path="/"
+                path="/signin"
                 component={() => (
                   <Suspense fallback={<div>...</div>}>
                     <SignIn />
@@ -48,7 +57,23 @@ class App extends React.Component {
                 )}
               />
               <Route
-                path="/charts"
+                path="/dashboard"
+                component={HeaderHoc(ChartsSuspense)}
+              />
+              <Route
+                path="/current_execution"
+                component={HeaderHoc(CurrentExecutionSuspense)}
+              />
+              <Route
+                path="/performance_status"
+                component={HeaderHoc(ChartsSuspense)}
+              />
+              <Route
+                path="/archived_result"
+                component={HeaderHoc(ChartsSuspense)}
+              />
+              <Route
+                path="/defective_management"
                 component={HeaderHoc(ChartsSuspense)}
               />
             </Switch>

@@ -5,10 +5,7 @@ import {routerMiddleware} from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/index';
 
-const history = createBrowserHistory({
-  basename: window.location.basename || ''
-});
-
+const history = createBrowserHistory();
 const routeMiddleware = routerMiddleware(history);
 const sagaMiddleware = createSagaMiddleware();
 

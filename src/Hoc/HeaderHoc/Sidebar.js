@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
 import { SideBarWrapper, SideProfile, SideBarTitle, SideBarOptions,
   ProfileImage, CoverBackground } from './styles';
@@ -13,9 +14,27 @@ class SideBar extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const { activeLink } = this.state;
+    const { history } = this.props;
+    
+    let a = history.location.pathname.split('/') || [];
+    console.log("aaa", a)
+    if(a && a[1] && a[1] !== activeLink) {
+      this.changeActiveLink(a[1])
+    }
+  }
+
+  changeURL = (url) => {
+    const { history } = this.props;
+    history.push(url);
+  }
+
   changeActiveLink = (id) => {
     this.setState({
       activeLink: id
+    }, () => {
+      this.changeURL(`/${id}`);
     })
   }
   
@@ -24,7 +43,7 @@ class SideBar extends React.Component {
     let data = [
       {
         text: 'Dashboard',
-        id: 'dashboard'
+        id: 'dashboard',
       },
       {
         text: 'Current Execution',
@@ -40,7 +59,7 @@ class SideBar extends React.Component {
       },
       {
         text: 'Defective Management',
-        id: 'defect_management'
+        id: 'defective_management'
       }
     ]
     return data.map((obj, index) => (
@@ -76,4 +95,4 @@ class SideBar extends React.Component {
   }
 }
 
-export default SideBar;
+export default withRouter(SideBar);
