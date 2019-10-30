@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Width = styled.div`
   width: 25%;
@@ -38,6 +40,9 @@ const IconWidget = styled.div`
   right: 15px;
   top: 15px;
   margin-left: 15px;
+  >svg {
+    font-size: 56px;
+  }
 `;
 
 const Title = styled.h4`
@@ -60,17 +65,21 @@ const WidgetClicker = styled.div`
   background: rgba(0,0,0,.4);
   text-align: right;
   color: rgba(255,255,255,.7);
+  >svg {
+    margin-left: 5px;
+    font-size: 14px;
+  }
 `;
 
 class Card extends React.Component {
   render() {
-    const { getIcon, title, value, bgColor } = this.props;
+    const { title, value, bgColor, Icon } = this.props;
     return (
       <Width>
         <div className="flexDiv">
           <Wrapper bgColor={bgColor}>
             <IconWidget>
-              {getIcon && getIcon()}
+              {Icon && <Icon />}
             </IconWidget>
             <div>
               <Title>
@@ -83,6 +92,7 @@ class Card extends React.Component {
             <div>
               <WidgetClicker>
                 View Detail
+                <FontAwesomeIcon icon={faArrowCircleRight} />
             </WidgetClicker>
             </div>
           </Wrapper>

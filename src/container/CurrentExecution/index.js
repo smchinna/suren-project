@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaRegChartBar } from "react-icons/fa";
 
 import { PagePadding, ChartWrapper, PanelBody } from './styles';
 
@@ -20,9 +21,9 @@ class CurrentExecution extends React.Component {
     })
   }
 
-  getCard = (title, value, bgColor) => {
+  getCard = (title, value, bgColor, icon) => {
     return (
-      <Card title={title} value={value} bgColor={bgColor} />
+      <Card title={title} value={value} bgColor={bgColor} Icon={icon}/>
     )
   }
 
@@ -34,7 +35,7 @@ class CurrentExecution extends React.Component {
         bgColor: '#00acac'
       },
       {
-        title: "Total Scenrios",
+        title: "Total Scenarios",
         value: "3"
       },
       {
@@ -45,14 +46,15 @@ class CurrentExecution extends React.Component {
       {
         title: "Avg Execution Time",
         value: "00 hr 33 min",
-        bgColor: '#00000052'
+        bgColor: '#00000052',
+        icon: FaRegChartBar
       }
     ]
     return (
       <div>
         {
           data.map((obj, index) => (
-            this.getCard(obj.title, obj.value, obj.bgColor)
+            this.getCard(obj.title, obj.value, obj.bgColor, obj.icon)
           ))
         }
       </div>
@@ -60,7 +62,7 @@ class CurrentExecution extends React.Component {
   }
 
   getChartPanel = (title, data, label) => {
-    let colors = ['#ff5b57', '#00acac']
+    let colors = ['#00acac', '#ff5b57']
     let dataSets = [
       {
         data: data,

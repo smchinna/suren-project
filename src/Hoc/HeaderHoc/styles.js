@@ -73,13 +73,35 @@ export const SearchInput = styled.input`
 export const BellIconDiv = styled.div`
   height: 100%;
   width: 44px;
-  background-color: lightblue;
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    > svg {
+      font-size: 18px;
+      cursor: pointer;
+    }
+  }
 `;
 
 export const Profile = styled.div`
   height: 100%;
   width: 170px;
-  background-color: yellow;
+  > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .name {
+      margin-left: 10px;
+    }
+    >svg {
+      font-size: 18px;
+      padding-top: 3px;
+      margin-left: 6px;
+    }
+  }
 `;
 
 export const SideBarWrapper = styled.div`
@@ -161,7 +183,7 @@ export const SideBarOptions = styled.div`
 export const ProfileImage = styled.div`
   width: 34px;
   height: 34px;
-  margin-bottom: 10px;
+  margin-bottom: ${({ noMargin }) => !noMargin && '10px'};
   overflow: hidden;
   position: relative;
   background-size: cover;
