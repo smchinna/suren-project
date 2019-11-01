@@ -1,7 +1,7 @@
 import React from 'react';
 /**Styles */
 import {
-  BackGroundMaker, BackGroundGradient, ThemeChanger, Theme
+  BackGroundMaker, BackGroundGradient, ThemeChanger, Theme, HOCWrapper, FixedPosition
 } from './styles';
 
 /**Images */
@@ -17,8 +17,28 @@ const ThemeHoc = (WrapCom) => {
     constructor() {
       super();
       this.state = {
-        bgUrl: defaultImg,
-        imageIndex: 0
+        bgUrl: shipImg,
+        imageIndex: 0,
+        imageArr: [
+          {
+            url: shipImg
+          },
+          {
+            url: SeaImg
+          },
+          {
+            url: defaultImg
+          },
+          {
+            url: iceImg
+          },
+          {
+            url: mountainImg
+          },
+          {
+            url: redSkyImg
+          }
+        ]
       }
     }
 
@@ -29,28 +49,32 @@ const ThemeHoc = (WrapCom) => {
       })
     }
 
+    changeImage = () => {
+      const { imageIndex, imageArr } = this.state;
+      if(imageIndex+1 > imageArr.length - 1 ) {
+        this.setState({
+          bgUrl: imageArr[0].url,
+          imageIndex: 0
+        })
+      } else {
+        this.setState({
+          bgUrl: imageArr[imageIndex+1].url,
+          imageIndex: imageIndex+1
+        })
+      }
+    }
+
+    // componentDidMount() {
+    //   this.interval = setInterval(() => this.changeImage(), 1500);
+    // }
+    
+    // componentWillUnmount() {
+    //   clearInterval(this.interval);
+    // }
+
     getThemeChangerUI = () => {
-      const { imageIndex } = this.state;
-      let data = [
-        {
-          url: defaultImg
-        },
-        {
-          url: SeaImg
-        },
-        {
-          url: iceImg
-        },
-        {
-          url: mountainImg
-        },
-        {
-          url: redSkyImg
-        },
-        {
-          url: shipImg
-        }
-      ]
+      const { imageIndex, imageArr } = this.state;
+      let data = [...imageArr]
       return (
         <ThemeChanger>
           {data.map((image, index) => (
@@ -69,15 +93,18 @@ const ThemeHoc = (WrapCom) => {
     }
 
     render() {
-      const { bgUrl } = this.state;
-      console.log("bgggg")
+      const { bgUrl, imageIndex } = this.state;
       return (
-        <div>
-          <BackGroundMaker url={bgUrl} />
-          <BackGroundGradient />
-          <WrapCom />
-          {this.getThemeChangerUI()}
-        </div>
+        <>
+          <FixedPosition>
+            <BackGroundMaker url={bgUrl} key={`image-${imageIndex}`}/>
+            <BackGroundGradient />
+            {this.getThemeChangerUI()}
+          </FixedPosition>
+          <HOCWrapper>
+            <WrapCom />
+          </HOCWrapper>          
+        </>
       )
     }
   }

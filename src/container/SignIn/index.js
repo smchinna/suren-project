@@ -118,7 +118,7 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <LoginBox>
           <LoginHeader>
             <div className="brand">
@@ -128,7 +128,7 @@ class SignIn extends React.Component {
           </LoginHeader>
           {this.getLoginUI()}
         </LoginBox>
-      </div>
+      </>
     )
   }
 }

@@ -2,11 +2,6 @@ import styled from 'styled-components';
 
 export const LoginBox = styled.div`
   width: 400px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: 0 0 0 -200px;
-  left: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,13 +9,11 @@ export const LoginBox = styled.div`
 `;
 
 export const LoginHeader = styled.div`
-padding: 0 20px;
-color: #fff;
-position: relative;
-.brand {
-  font-size: 28px;
-  color: #fff;
-}
+  padding: 0 20px;
+  position: relative;
+  .brand {
+    font-size: 28px;
+  }
 `;
 
 export const BrandLogo = styled.span`
@@ -56,5 +49,4 @@ padding: 20px;
 export const RememberBox = styled.div`
   display: flex;
   width: 100%;
-  color: #fff;
 `;
