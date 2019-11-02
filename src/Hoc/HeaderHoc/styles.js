@@ -31,7 +31,7 @@ export const PaddingTop = styled.div`
 export const ContentWrapper = styled.div`
   margin-left: 220px;
   background-color: #d9e0e7;
-  width: 100%;
+  width: calc(100% - 220px);
 `;
 
 export const LeftWidth = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaRegChartBar } from "react-icons/fa";
 
-import { PagePadding, ChartWrapper, PanelBody } from './styles';
+import { PagePadding, ChartWrapper, PanelBody, TableWrapper, GridWidth, FlexItem, InfoCard } from './styles';
 
 import Card from '../../components/Card/index';
 import Panel from '../../components/Panel';
@@ -16,9 +16,16 @@ class CurrentExecution extends React.Component {
   }
 
   changedOpenedPanel = (text) => {
-    this.setState({
-      openedPanel: text
-    })
+    const { openedPanel } = this.state;
+    if(text === openedPanel) {
+      this.setState({
+        openedPanel: ''
+      })
+    } else {
+      this.setState({
+        openedPanel: text
+      })
+    }
   }
 
   getCard = (title, value, bgColor, icon) => {
@@ -62,7 +69,7 @@ class CurrentExecution extends React.Component {
   }
 
   getChartPanel = (title, data, label) => {
-    let colors = ['#00acac', '#ff5b57']
+    let colors = ['#66c16a', '#ff5b57']
     let dataSets = [
       {
         data: data,
@@ -75,6 +82,209 @@ class CurrentExecution extends React.Component {
           <PieUI datasets={dataSets} label={label} height={200} />
         </PanelBody>
       </Panel>
+    )
+  }
+
+  getGridUI = (index, obj) => (
+    <GridWidth width={obj.width} bgColor={obj.bgColor} key={index}>
+      {obj.title}            
+    </GridWidth>
+  )
+
+  getInformationUI = (index, obj) => {
+    return(
+      <InfoCard key={index}>
+        <div className="card-title">
+          <div>
+            {obj.title}
+          </div>
+        </div>
+        <div className="card-value">
+          <div>
+            {obj.value}
+          </div>
+        </div>
+      </InfoCard>
+    )
+  }
+
+  getTableUI = () => {
+    let header = [
+      {
+        width: '15%',
+        title: '',
+        bgColor: ''
+      },
+      {
+        width: '15%',
+        title: 'Pass Count',
+        bgColor: '#ff5b57'
+      },
+      {
+        width: '15%',
+        title: 'Fail Count',
+        bgColor: '#66c16a'
+      },
+      {
+        width: '15%',
+        title: 'Total Count',
+        bgColor: '#92d3de'
+      },
+      {
+        width: '20%',
+        title: 'Pass Percentage',
+        bgColor: '#ff5b57'
+      },
+      {
+        width: '20%',
+        title: 'Fail Percentage',
+        bgColor: '#66c16a'
+      }
+    ];
+    let modulusData = [
+      {
+        width: '15%',
+        title: 'Modulus',
+        bgColor: '#ffff2de8'
+      },
+      {
+        width: '15%',
+        title: '1',
+        bgColor: '#ff5b57'
+      },
+      {
+        width: '15%',
+        title: '0',
+        bgColor: '#66c16a'
+      },
+      {
+        width: '15%',
+        title: '1',
+        bgColor: '#92d3de'
+      },
+      {
+        width: '20%',
+        title: '100%',
+        bgColor: '#ff5b57'
+      },
+      {
+        width: '20%',
+        title: '0%',
+        bgColor: '#66c16a'
+      }
+    ];
+    let scanarioData = [
+      {
+        width: '15%',
+        title: 'Scenario',
+        bgColor: '#92d3de'
+      },
+      {
+        width: '15%',
+        title: '1',
+        bgColor: '#ff5b57'
+      },
+      {
+        width: '15%',
+        title: '0',
+        bgColor: '#66c16a'
+      },
+      {
+        width: '15%',
+        title: '1',
+        bgColor: '#92d3de'
+      },
+      {
+        width: '20%',
+        title: '100%',
+        bgColor: '#ff5b57'
+      },
+      {
+        width: '20%',
+        title: '0%',
+        bgColor: '#66c16a'
+      }
+    ];
+    let testData = [
+      {
+        width: '15%',
+        title: 'Test Cases',
+        bgColor: '#c1bdbd'
+      },
+      {
+        width: '15%',
+        title: '1',
+        bgColor: '#ff5b57'
+      },
+      {
+        width: '15%',
+        title: '0',
+        bgColor: '#66c16a'
+      },
+      {
+        width: '15%',
+        title: '1',
+        bgColor: '#92d3de'
+      },
+      {
+        width: '20%',
+        title: '100%',
+        bgColor: '#ff5b57'
+      },
+      {
+        width: '20%',
+        title: '0%',
+        bgColor: '#66c16a'
+      }
+    ];
+    let InfoData = [
+      {
+        title: 'Start Date & Time',
+        value: '02/10/2019 17:32:00'
+      },
+      {
+        title: 'End Date & Time',
+        value: '02/11/2019 17:32:00'
+      },
+      {
+        title: 'Total Duration',
+        value: '00 hr 1 min  30 sec 0 ms'
+      },
+      {
+        title: 'Average Execution Time',
+        value: '00 hr 30 min  30 sec 0 ms'
+      }
+    ]
+    return(
+      <ChartWrapper>
+        <TableWrapper>
+            <FlexItem justifyCon='space-around' wrap={1}>
+              {InfoData.map((obj, index) => (
+                this.getInformationUI(`info-${index}`, obj)
+              ))}
+            </FlexItem>
+            <FlexItem >
+              {header.map((obj, index) => (
+                this.getGridUI(`header-${index}`, obj)
+              ))}
+            </FlexItem>
+            <FlexItem >
+              {modulusData.map((obj, index) => (
+                this.getGridUI(`header-${index}`, obj)
+              ))}
+            </FlexItem>
+            <FlexItem >
+              {scanarioData.map((obj, index) => (
+                this.getGridUI(`header-${index}`, obj)
+              ))}
+            </FlexItem>
+            <FlexItem >
+              {testData.map((obj, index) => (
+                this.getGridUI(`header-${index}`, obj)
+              ))}
+            </FlexItem>
+        </TableWrapper>
+      </ChartWrapper>
     )
   }
 
@@ -102,7 +312,7 @@ class CurrentExecution extends React.Component {
     return (
       <Panel title="Overall execution status" onClick={this.changedOpenedPanel} id='overall'>
         {openedPanel === 'overall' &&
-          <ChartWrapper>
+          <ChartWrapper >
             {chartData.map((obj, index) => (
               <div key={index} className="chartWidth">
                 {this.getChartPanel(obj.title, obj.data, obj.label)}
@@ -110,6 +320,7 @@ class CurrentExecution extends React.Component {
             ))}
           </ChartWrapper>
         }
+        {openedPanel === 'overall' && this.getTableUI()}
       </Panel>
     )
   }
@@ -145,6 +356,7 @@ class CurrentExecution extends React.Component {
             ))}
           </ChartWrapper>
         }
+        {openedPanel === 'health' && this.getTableUI()}
       </Panel>
     )
   }
@@ -181,6 +393,7 @@ class CurrentExecution extends React.Component {
             ))}
           </ChartWrapper>
         }
+        {openedPanel === 'travel' && this.getTableUI()}
       </Panel>
     )
   }
@@ -216,6 +429,7 @@ class CurrentExecution extends React.Component {
             ))}
           </ChartWrapper>
         }
+        {openedPanel === 'life' && this.getTableUI()}
       </Panel>
     )
   }
