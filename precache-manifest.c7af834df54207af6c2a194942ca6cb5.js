@@ -1,39 +1,43 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a0b18f407f8092c566f3b6180408f40",
+    "revision": "547485225b556948d11dc528d7a75905",
     "url": "/suren-project/index.html"
   },
   {
-    "revision": "7675be6e4a76be7cf6db",
+    "revision": "b504f54eb3aa14f3ebd3",
     "url": "/suren-project/static/css/main.28e4956e.chunk.css"
   },
   {
-    "revision": "1b2231173136087dbd35",
-    "url": "/suren-project/static/js/0.0d9911ab.chunk.js"
+    "revision": "a42fd5c131fab115bdf7",
+    "url": "/suren-project/static/js/2.ae3abd29.chunk.js"
   },
   {
-    "revision": "6abe388c755c1544b8fb",
-    "url": "/suren-project/static/js/3.43668233.chunk.js"
+    "revision": "72dca3b13a8f9fac037d",
+    "url": "/suren-project/static/js/3.25027fc5.chunk.js"
   },
   {
-    "revision": "cf464e3e10cfbb4db3fc",
-    "url": "/suren-project/static/js/4.8a253a4a.chunk.js"
+    "revision": "b4aaab06fb18020e98bb",
+    "url": "/suren-project/static/js/4.97192ca2.chunk.js"
   },
   {
-    "revision": "19959118046442d51456",
-    "url": "/suren-project/static/js/5.9953dc95.chunk.js"
+    "revision": "eed1b04d5b0d78fd9a4c",
+    "url": "/suren-project/static/js/5.6578564e.chunk.js"
   },
   {
-    "revision": "82496814ad287900d02a",
-    "url": "/suren-project/static/js/6.76eb73b7.chunk.js"
+    "revision": "316df528678ba2754888",
+    "url": "/suren-project/static/js/6.99495eaf.chunk.js"
   },
   {
-    "revision": "7675be6e4a76be7cf6db",
-    "url": "/suren-project/static/js/main.987b3980.chunk.js"
+    "revision": "d6736a638644e0a3c554",
+    "url": "/suren-project/static/js/7.760cb128.chunk.js"
   },
   {
-    "revision": "51e10dfb95d1a0277d06",
-    "url": "/suren-project/static/js/runtime-main.2bd76b9f.js"
+    "revision": "b504f54eb3aa14f3ebd3",
+    "url": "/suren-project/static/js/main.25ff1ed9.chunk.js"
+  },
+  {
+    "revision": "509e938cb1e85b578d17",
+    "url": "/suren-project/static/js/runtime-main.c20b55d9.js"
   },
   {
     "revision": "fa1ec1895e364a7c2dd9c85007d088b9",
