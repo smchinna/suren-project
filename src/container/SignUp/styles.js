@@ -1,16 +1,23 @@
 import styled from 'styled-components';
 
 export const LoginBox = styled.div`
-  width: 400px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: 0 0 0 -200px;
-  left: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 4px;
+  @media(min-width: 380px) {
+    width: 400px;
+  }
+  .signUpText {
+    padding: 0px 20px;
+    color: #2d353c!important;
+    font-size: 12px;
+    > span {
+      color: #348fe2;
+      z-index: 10;
+      cursor: pointer;
+    }
+  }
 `;
 
 export const LoginHeader = styled.div`
@@ -41,6 +48,14 @@ padding: 20px;
   margin: 15px 0px;
   width: 100%;
   position: relative;
+  .calendarUI {
+    width: 100%;
+    height: 48px;
+    > div {
+     width: 100%;
+     padding: 6px;
+    }
+  }
   .icon {
     position: absolute;
     top: 0;

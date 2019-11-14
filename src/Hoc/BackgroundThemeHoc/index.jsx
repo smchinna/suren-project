@@ -1,7 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 /**Styles */
 import {
-  BackGroundMaker, BackGroundGradient, ThemeChanger, Theme, HOCWrapper, FixedPosition
+   ThemeChanger, Theme, HOCWrapper,
 } from './styles';
 
 /**Images */
@@ -64,6 +66,15 @@ const ThemeHoc = (WrapCom) => {
       }
     }
 
+    componentDidMount() {
+      const { history } = this.props;
+      //let token = splitCookie('auth_token');
+      let token = (localStorage && localStorage.getItem('auth_token')) ? localStorage.getItem('auth_token') : '';
+      if(token && token.trim() !== '') {
+        history.push('/current_execution');
+      } 
+    }
+
     // componentDidMount() {
     //   this.interval = setInterval(() => this.changeImage(), 1500);
     // }
@@ -93,22 +104,22 @@ const ThemeHoc = (WrapCom) => {
     }
 
     render() {
-      const { bgUrl, imageIndex } = this.state;
+      //const { bgUrl, imageIndex } = this.state;
       return (
         <>
-          <FixedPosition>
+          {/* <FixedPosition>
             <BackGroundMaker url={bgUrl} key={`image-${imageIndex}`}/>
             <BackGroundGradient />
             {this.getThemeChangerUI()}
-          </FixedPosition>
+          </FixedPosition> */}
           <HOCWrapper>
-            <WrapCom />
+            <WrapCom {...this.props}/>
           </HOCWrapper>          
         </>
       )
     }
   }
-  return Hoc;
+  return withRouter(Hoc);
 }
 
 export default ThemeHoc;

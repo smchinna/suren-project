@@ -69,7 +69,6 @@ export const FixedPosition = styled.div`
 `;
 
 export const HOCWrapper = styled.div`
-  width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,4 +76,5 @@ export const HOCWrapper = styled.div`
   top: 0;
   bottom: 0;
   right: 0;
+  left: 0;
 `;

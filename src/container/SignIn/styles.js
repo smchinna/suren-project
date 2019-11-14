@@ -1,11 +1,23 @@
 import styled from 'styled-components';
 
 export const LoginBox = styled.div`
-  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 4px;
+  @media(min-width: 380px) {
+    width: 400px;
+  }
+  .signUpText {
+    padding: 0px 20px;
+    color: #2d353c!important;
+    font-size: 12px;
+    > span {
+      color: #348fe2;
+      z-index: 10;
+      cursor: pointer;
+    }
+  }
 `;
 
 export const LoginHeader = styled.div`
@@ -31,7 +43,7 @@ export const BrandLogo = styled.span`
 `;
 
 export const SignInBox = styled.div`
-padding: 20px;
+padding: 20px 20px 0px;
 .marginBetGrid {
   margin: 15px 0px;
   width: 100%;

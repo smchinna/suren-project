@@ -34,6 +34,7 @@ export const CheckBoxDiv = styled.div`
 `;
 
 export const Text = styled.div`
+  color: #2d353c;
   padding-left: ${({ showText }) => showText ? '10px' : '0'};
   font-size: 14px;
   color: ${({ disabled }) => disabled ? '#afafaf' : ''};

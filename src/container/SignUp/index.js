@@ -1,7 +1,9 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faLock, faBuilding } from '@fortawesome/free-solid-svg-icons'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faBuilding, faEnvelope, faKey, faUsers } from '@fortawesome/free-solid-svg-icons';
+// import Calendar from 'ciqu-react-calendar';
+import DatePicker from 'react-date-picker';
+import { connect } from 'react-redux';
 
 /**Components */
 import InputCom from '../../components/InputCom';
@@ -15,15 +17,20 @@ import {
 
 import ThemeHoc from '../../Hoc/BackgroundThemeHoc';
 
+import { fetchRegisterAPI } from '../../redux/actions';
+
 class SignUp extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      companyName: '',
+      organisationName: '',
+      organisationId: '',
       email: '',
-      password: '',
-      confirmPassword: '',
+      licenceType: '',
+      noOfUsers: '',
+      startDate: '',
+      endDate: '',
       rememberMe: false
     }
   }
@@ -40,6 +47,18 @@ class SignUp extends React.Component {
     })
   }
 
+  changeStartDate = (date) => {
+    this.setState({
+      startDate: date
+    })
+  }
+
+  changeEndDate = (date) => {
+    this.setState({
+      endDate: date
+    })
+  }
+
   getInput = (obj) => {
     return (
       <InputCom
@@ -52,36 +71,59 @@ class SignUp extends React.Component {
     )
   }
 
+  registerUI = () => {
+    const { organisationId, organisationName, email, licenceType, startDate, endDate, noOfUsers } = this.state;
+    let obj = {
+      "organizationName": organisationName,
+      "organizationId": organisationId,
+      "adminEmail": email,
+      "licenseType": licenceType,
+      "numberOfUsers": noOfUsers,
+      "licenseStartDate": startDate,
+      "licenseEndDate": endDate
+    }
+    const { registerAction } = this.props;
+    registerAction(obj)
+  }
+
   getLoginUI = () => {
-    const { userName, companyName, password, confirmPassword } = this.state;
+    const { organisationName, organisationId, licenceType, noOfUsers, email,
+      startDate, endDate } = this.state;
     let inputData = [
       {
         type: 'text',
-        placeHolder: 'Company Name',
-        key: 'companyName',
-        value: companyName,
+        placeHolder: 'Organisation Name',
+        key: 'organisationName',
+        value: organisationName,
         icon: faBuilding
       },
       {
         type: 'text',
-        placeHolder: 'Email',
-        key: 'email',
-        value: userName,
+        placeHolder: 'Organisation Id',
+        key: 'organisationId',
+        value: organisationId,
         icon: faUser
       },
       {
-        type: 'password',
-        placeHolder: 'Password',
-        key: 'password',
-        value: password,
-        icon: faLock
+        type: 'text',
+        placeHolder: 'Admin email',
+        key: 'email',
+        value: email,
+        icon: faEnvelope
       },
       {
-        type: 'Re-enter password',
-        placeHolder: 'Confirm Password',
-        key: 'confirmPassword',
-        value: confirmPassword,
-        icon: faLock
+        type: 'text',
+        placeHolder: 'Licenece type',
+        key: 'licenceType',
+        value: licenceType,
+        icon: faKey
+      },
+      {
+        type: 'text',
+        placeHolder: 'Number of Users',
+        key: 'noOfUsers',
+        value: noOfUsers,
+        icon: faUsers
       }
     ]
     return (
@@ -96,6 +138,21 @@ class SignUp extends React.Component {
             }
           </div>
         ))}
+        <div className="marginBetGrid">
+          <DatePicker
+            value={startDate}
+            onChange={this.changeStartDate}
+            className="calendarUI"
+          />        
+        </div>
+        <div className="marginBetGrid">
+          <DatePicker
+            value={endDate}
+            onChange={this.changeEndDate}
+            className="calendarUI"
+            name="End Date"
+          />
+        </div>  
         {this.getRememberMeUI()}
         {this.getSignButton()}
       </SignInBox>
@@ -105,9 +162,9 @@ class SignUp extends React.Component {
   getSignButton = () => {
     return (
       <div className="marginBetGrid">
-        <Button>
+        <Button onClick={() => this.registerUI()}>
           Sign Up
-      </Button>
+        </Button>
       </div>
     )
   }
@@ -125,6 +182,11 @@ class SignUp extends React.Component {
     )
   }
 
+  changeRoute = (url) => {
+    const { history } = this.props;
+    history.push(url);
+  }
+
   render() {
     return (
       <div>
@@ -136,10 +198,17 @@ class SignUp extends React.Component {
             </div>
           </LoginHeader>
           {this.getLoginUI()}
+          <div className="signUpText">
+            Already a member? click <span onClick={() => this.changeRoute('/login')}>here</span> to login.
+          </div>
         </LoginBox>
       </div>
     )
   }
 }
 
-export default ThemeHoc(SignUp);
+const mapDistpatchToProps = (dispatch) => ({
+  registerAction: (data) => dispatch(fetchRegisterAPI(data))
+})
+
+export default connect(null, mapDistpatchToProps)(ThemeHoc(SignUp));

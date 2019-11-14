@@ -19,7 +19,6 @@ class SideBar extends React.Component {
     const { history } = this.props;
     
     let a = history.location.pathname.split('/') || [];
-    console.log("aaa", a)
     if(a && a[1] && a[1] !== activeLink) {
       this.changeActiveLink(a[1])
     }

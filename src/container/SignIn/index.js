@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faLock, faBuilding } from '@fortawesome/free-solid-svg-icons'
-
+import { faUser, faLock } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux';
 
 /**Components */
 import InputCom from '../../components/InputCom';
@@ -13,7 +13,11 @@ import {
    LoginBox, LoginHeader, BrandLogo, SignInBox, RememberBox
 } from './styles';
 
+/**HOC */
 import ThemeHoc from '../../Hoc/BackgroundThemeHoc';
+
+/**Actions */
+import { fetchLoginAPI } from '../../redux/actions';
 
 class SignIn extends React.Component {
 
@@ -34,7 +38,6 @@ class SignIn extends React.Component {
   }
 
   changeCheckBox = () => {
-    console.log('assssssss')
     this.setState({
       rememberMe: !this.state.rememberMe
     })
@@ -53,15 +56,15 @@ class SignIn extends React.Component {
   }
 
   getLoginUI = () => {
-    const { userName, companyName, password } = this.state;
+    const { userName, password } = this.state;
     let inputData = [
-      {
-        type: 'text',
-        placeHolder: 'Company Name',
-        key: 'companyName',
-        value: companyName,
-        icon: faBuilding
-      },
+      // {
+      //   type: 'text',
+      //   placeHolder: 'Company Name',
+      //   key: 'companyName',
+      //   value: companyName,
+      //   icon: faBuilding
+      // },
       {
         type: 'text',
         placeHolder: 'User Name',
@@ -93,12 +96,18 @@ class SignIn extends React.Component {
     )
   }
 
+  submitSignInFunc = () => {
+    const { loginAction } = this.props;
+    const { userName, password } = this.state;
+    loginAction({ userName, password });
+  }
+
   getSignButton = () => {
     return (
       <div className="marginBetGrid">
-        <Button>
+        <Button onClick={() => this.submitSignInFunc()}>
           Sign me in
-      </Button>
+        </Button>
       </div>
     )
   }
@@ -116,6 +125,11 @@ class SignIn extends React.Component {
     )
   }
 
+  changeRoute = (url) => {
+    const { history } = this.props;
+    history.push(url);
+  }
+
   render() {
     return (
       <>
@@ -127,10 +141,17 @@ class SignIn extends React.Component {
             </div>
           </LoginHeader>
           {this.getLoginUI()}
+          <div className="signUpText">
+            Not a member yet? click <span onClick={() => this.changeRoute('/register')}>here</span> to register.
+          </div>
         </LoginBox>
       </>
     )
   }
 }
 
-export default ThemeHoc(SignIn);
+const mapDispatchToProps = (dispatch) => ({
+  loginAction: (data) => dispatch(fetchLoginAPI(data))
+})
+
+export default connect(null, mapDispatchToProps)(ThemeHoc(SignIn));
